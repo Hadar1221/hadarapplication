@@ -80,7 +80,7 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#A788F6"
+        android:backgroundTint="#8C6AEF"
         android:onClick="imgChange2"
         android:text="picture"
         app:layout_constraintBottom_toBottomOf="parent"
