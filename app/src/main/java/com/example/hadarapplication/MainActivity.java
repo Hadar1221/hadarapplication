@@ -2,9 +2,14 @@ package com.example.hadarapplication;
 
 
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,13 +19,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.widget.Switch;
 import android.widget.SeekBar;
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     Switch switchImages;
     SeekBar seekBarLight;
     ImageView imageView2dog;
     float alpha = 1;
     Button button5;
+
+
+    TextView tv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,12 @@ public class MainActivity extends AppCompatActivity  {
 
         initViews();
         start();
+
+        tv = (TextView) findViewById(R.id.tv);
+
+        registerForContextMenu(tv);
+
+
 
     }
 
@@ -55,26 +70,28 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
-    public void pluslight(View view){
-        if (view.getId()==R.id.button3) {
+    public void pluslight(View view) {
+        if (view.getId() == R.id.button3) {
             Toast.makeText(this, "darker", Toast.LENGTH_SHORT).show();
-            if (alpha<1)
-                alpha+=0.1f;
+            if (alpha < 1)
+                alpha += 0.1f;
             imageView.setAlpha(alpha);
             imageView2dog.setAlpha(alpha);
         }
     }
-    public void minuslight(View view){
-        if (view.getId()==R.id.button2) {
+
+    public void minuslight(View view) {
+        if (view.getId() == R.id.button2) {
             Toast.makeText(this, "lighter", Toast.LENGTH_SHORT).show();
-            if (alpha>0)
-                alpha-=0.1f;
+            if (alpha > 0)
+                alpha -= 0.1f;
             imageView.setAlpha(alpha);
             imageView2dog.setAlpha(alpha);
         }
     }
-    public void imgChange2(View view){
-        if (view.getId()==R.id.button4) {
+
+    public void imgChange2(View view) {
+        if (view.getId() == R.id.button4) {
             Toast.makeText(this, "changed", Toast.LENGTH_SHORT).show();
             if (imageView.getVisibility() == View.VISIBLE) {
                 imageView.setVisibility(View.INVISIBLE);
@@ -119,7 +136,7 @@ public class MainActivity extends AppCompatActivity  {
         seekBarLight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                float brightness  = i/100f;
+                float brightness = i / 100f;
                 imageView.setAlpha(brightness);
             }
 
@@ -135,5 +152,54 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_context, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+
+        if (item.getItemId() == R.id.firstline) {
+            Toast.makeText(this, "You selected first line",
+                    Toast.LENGTH_LONG).show();
+            return true;
+
+        } else if (item.getItemId() == R.id.secondline) {
+            Toast.makeText(this, "You selected second line",
+                    Toast.LENGTH_LONG).show();
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        super.onOptionsItemSelected(item);
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_login) {
+            Toast.makeText(this, "You selected login", Toast.LENGTH_SHORT).show();
+        } else if (R.id.action_register == id) {
+            Toast.makeText(this, "You selected register", Toast.LENGTH_SHORT).show();
+        } else if (R.id.action_start == id) {
+            Toast.makeText(this, "You selected exit", Toast.LENGTH_SHORT).show();
+        }
+
+        return true;
+    }
 
 }
