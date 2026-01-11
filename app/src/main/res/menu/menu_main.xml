@@ -2,21 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_login"
-        android:icon="@android:drawable/btn_star_big_off"
-        android:orderInCategory="100"
-        android:title="Login"
-        app:showAsAction="always" />
+        android:id="@+id/action_mainpage"
+        android:orderInCategory="300"
+        android:title="mainpage"
+        app:showAsAction="never" />
     <item
-        android:id="@+id/action_register"
-        android:title="Register"
-        android:orderInCategory="200"
+        android:id="@+id/action_dynamic"
+        android:title="dynamic"
+        android:orderInCategory="300"
         app:showAsAction="never"
         />
 
     <item
-        android:id="@+id/action_start"
-        android:title="Start"
+        android:id="@+id/action_sharepreferences"
+        android:title="sharepreferences"
+        android:orderInCategory="300"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_dialog"
+        android:title="dialog"
         android:orderInCategory="300"
         app:showAsAction="never"
         />

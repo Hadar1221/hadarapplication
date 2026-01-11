@@ -1,6 +1,7 @@
 package com.example.hadarapplication;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -191,12 +192,27 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if (id == R.id.action_login) {
-            Toast.makeText(this, "You selected login", Toast.LENGTH_SHORT).show();
-        } else if (R.id.action_register == id) {
-            Toast.makeText(this, "You selected register", Toast.LENGTH_SHORT).show();
-        } else if (R.id.action_start == id) {
-            Toast.makeText(this, "You selected exit", Toast.LENGTH_SHORT).show();
+        if (R.id.action_mainpage == id) {
+            Intent intent = new Intent(this, MainActivity.class);
+            Toast.makeText(this, "You selected main page", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
+        } else if (R.id.action_dynamic == id) {
+            Intent intent = new Intent(this, DynamicActivity.class);
+            Toast.makeText(this, "You selected DynamicActivity", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
+        } else if (R.id.action_sharepreferences == id) {
+            Intent intent = new Intent(this, Sharepreferences.class);
+            Toast.makeText(this, "You selected Sharepreferences", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
+        }
+        else if (R.id.action_dialog == id) {
+            Intent intent = new Intent(this, DialogActivity.class);
+            Toast.makeText(this, "You selected DialogActivity", Toast.LENGTH_SHORT).show();
+            startActivity(intent);
+            finish();
         }
 
         return true;
