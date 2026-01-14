@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IntentFirstActivity"
+    android:gravity="center">
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:layout_margin="12dp"/>
+
+    <CheckBox
+        android:id="@+id/cbMale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Male?"
+        android:layout_margin="12dp"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send to other page"
+        android:layout_margin="24dp"/>
+
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:id="@+id/tvNowAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age:"
+        android:textSize="18sp"/>
+    <Button
+        android:id="@+id/tbnowAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="change age"
+        android:layout_margin="12dp"/>
+</LinearLayout>

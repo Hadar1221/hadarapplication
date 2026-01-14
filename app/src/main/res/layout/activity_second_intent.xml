@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntentSecondActivity"
+    android:orientation="vertical"
+    >
+
+
+
+
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textSize="18sp"
+        android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:onClick="finishActivity"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/etBirthYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="הכנס שנת לידה"
+        android:inputType="number"
+        android:maxLength="4"
+        android:ems="4"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="160dp"
+        />
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+        android:onClick="finishActivity"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
